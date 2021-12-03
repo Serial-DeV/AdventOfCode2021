@@ -27,5 +27,5 @@ $gamma2 = [string]::new($gamma)
 $eint = [Convert]::ToInt32($epsilon2,2)
 $gint = [Convert]::ToInt32($gamma2,2)
 
-echo ($eint *$gint)
+echo ($eint * $gint)
 
