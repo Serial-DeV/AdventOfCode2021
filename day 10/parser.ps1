@@ -11,7 +11,7 @@ foreach($line in Get-Content .\input.txt) {
 	[System.Collections.ArrayList]$openingchars= @()
 	For($i=0;$i -lt $line.length;$i++) {
 		if($line[$i] -eq '(' -Or $line[$i] -eq '[' -Or $line[$i] -eq '{' -Or $line[$i] -eq '<'){
-			$openingchars.Add($line[$i])
+			$openingchars.Add($line[$i]) | Out-Null
 		}
 
 		elseif($line[$i] -eq ')'){
