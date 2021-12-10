@@ -18,7 +18,9 @@ foreach($line in Get-Content .\input.txt) {
 		}
 
 		if($line[$i] -eq '(' -Or $line[$i] -eq '[' -Or $line[$i] -eq '{' -Or $line[$i] -eq '<'){
-			$openingchars.Add($line[$i])
+			
+			$openingchars.Add($line[$i]) | Out-Null
+			
 		}
 
 		elseif($line[$i] -eq ')'){
@@ -73,7 +75,9 @@ foreach($line in Get-Content .\input.txt) {
 				$linescore = $linescore + 2
 			}
 			elseif($openingchars[$openingchars.Count – 1] -eq '{'){
+				
 				$linescore = $linescore + 3
+				
 			}
 			elseif($openingchars[$openingchars.Count – 1] -eq '<'){
 				$linescore = $linescore + 4
@@ -82,7 +86,7 @@ foreach($line in Get-Content .\input.txt) {
 			$openingchars.RemoveAt($openingchars.Count – 1)
 
 		}
-		$linescores.Add($linescore)
+		$linescores.Add($linescore) | Out-Null
 	}	
 
 }
